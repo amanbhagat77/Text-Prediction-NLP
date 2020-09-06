@@ -1,0 +1,202 @@
+---
+title: "Exploratory Analysis on "
+author: "Aman Bhagat"
+date: "16/08/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(NLP)
+library(tm)
+library(textmineR)
+library(RWeka)
+library(wordcloud)
+
+```
+
+## Overview
+ 
+This is an exploratory analysis on the given dataset to understand the distribution of words and relationship between the words in the corpora. The goal of this analysis is to get breif summary and important features of the dataset which would be useful in model building process.
+
+## DataSet
+
+We have downloaded the dataset and established connection to the dataset.
+
+```{r datset, echo=TRUE}
+#Establishing connection to the English version of the twitter, Blogs and news dataset
+
+con_twitter <- file("D:/Games/R Workspace/Capstone/Coursera-SwiftKey/final/en_US/en_US.twitter.txt", "r")
+con_news <- file("D:/Games/R Workspace/Capstone/Coursera-SwiftKey/final/en_US/en_US.news.txt", "r")
+con_blogs <- file("D:/Games/R Workspace/Capstone/Coursera-SwiftKey/final/en_US/en_US.blogs.txt", "r")
+
+```
+
+```{r reading, cache = TRUE, warning = FALSE}
+# Reading lines from each of the dataset
+lines_twitter <- readLines(con_twitter, warn=FALSE, encoding="UTF-8")
+lines_news <- readLines(con_news, encoding="UTF-8")
+lines_blogs <- readLines(con_blogs, warn=FALSE, encoding="UTF-8")
+```
+
+Summary on length of each data set lines can be observed below:
+
+```{r summary, cache = TRUE}
+summary(nchar(lines_twitter))
+summary(nchar(lines_blogs))
+summary(nchar(lines_news))
+
+```
+
+## Data Sampling
+
+For this purpose I took 10% of each file. Then I combined the sampled data and proceeded with the data cleaning process. 
+
+```{r sampling, cache = TRUE}
+set.seed(1725)
+twitter <- sample(lines_twitter, length(lines_twitter)*0.05)
+blogs <- sample(lines_blogs, length(lines_blogs)*0.05)
+news <- sample(lines_news, length(lines_news)*0.05)
+
+corpus <- c(twitter, blogs, news)
+corpus <- iconv(corpus, "UTF-8","ASCII", sub = "")
+length(corpus)
+```
+
+## Data Cleaning
+
+In this step I used Text Mining Package to clean up the data. 
+
+```{r datacleaning, cache = TRUE}
+corpus <- VCorpus(VectorSource(corpus))
+corpus <- tm_map(corpus, stripWhitespace)
+corpus <- tm_map(corpus, tolower)
+corpus <- tm_map(corpus, removePunctuation)
+corpus <- tm_map(corpus, removeNumbers)
+corpus <- tm_map(corpus, PlainTextDocument)
+corpus <- tm_map(corpus, removeWords, stopwords("english"))
+```
+
+## Exploratory Analysis
+
+Now we will create  n-grams of the dataset, which will represent the frequency of each gram. To reduce the computation we have taken most frequent terms for representing purpose. In case of unigram we took the words which have more than 60 occurence. In case of Bigram we took the words which have more than 40 occurrence and finally for trigrams we took the words which have more than 10 occurence.
+
+```{r n-gram, cache = TRUE}
+memory.limit(size = 56000)
+unigram <- function(x) NGramTokenizer(x, Weka_control(min = 1, max = 1))
+unigram_tdm <- TermDocumentMatrix(corpus, control = list(tokenize = unigram))
+unigram_freqTerm <- findFreqTerms(unigram_tdm,lowfreq = 60)
+```
+```{r bigram,cache = TRUE}
+bigram <- function(x) NGramTokenizer(x, Weka_control(min = 2, max = 2))
+bigram_tdm <- TermDocumentMatrix(corpus, control = list(tokenize = bigram))
+bigram_freqTerm <- findFreqTerms(bigram_tdm,lowfreq=40)
+```
+```{r trigram, cache = TRUE}
+trigram <- function(x) NGramTokenizer(x, Weka_control(min = 3, max = 3))
+trigram_tdm <- TermDocumentMatrix(corpus, control = list(tokenize = trigram))
+trigram_freqTerm <- findFreqTerms(trigram_tdm,lowfreq=10)
+```
+### Distribution of each gram
+
+Here we are showing the distribution of unigram, bigram and trigram to undestand the frequency of each words. we have also 
+
+```{r , echo=FALSE}
+gc()
+```
+
+```{r Unigram,cache = TRUE, eval=TRUE}
+unigram_freq <- rowSums(as.matrix(unigram_tdm[unigram_freqTerm,]))
+unigram_ord <- order(unigram_freq, decreasing = TRUE)
+unigram_freq <- data.frame(word=names(unigram_freq[unigram_ord]), frequency=unigram_freq[unigram_ord])
+```
+
+```{r unigram_plot, eval = FALSE}
+ggplot(unigram_freq[1:25,], aes(factor(word, levels = unique(word)), frequency)) +
+  geom_bar(stat = 'identity')+
+  theme(axis.text.x=element_text(angle=90))+
+  xlab('Unigram')+
+  ylab('Frequency')+
+  title("Distribution of top 25 most occurred Unigram in the dataset")+
+  guides(fill = FALSE)
+```
+
+
+```{r , echo=FALSE}
+gc()
+```
+
+```{r word_cloud_unigram, eval=FALSE}
+wordcloud(unigram_freq$word, unigram_freq$frequency, max.words=40, colors=brewer.pal(8, "Set1"))
+```
+
+From the above distribution and word cloud we can see that "Just", "Like", "will", "one" and "can" are the top 5 most occurred word in the dataset. The Frequency is above and approx 20000 in the dataset.
+
+
+```{r bigram_plot, cache = TRUE}
+bigram_freq <- rowSums(as.matrix(bigram_tdm[bigram_freqTerm,]))
+bigram_ord <- order(bigram_freq, decreasing = TRUE)
+bigram_freq <- data.frame(word=names(bigram_freq[bigram_ord]), frequency=bigram_freq[bigram_ord])
+
+ggplot(bigram_freq[1:20,], aes(factor(word, levels = unique(word)), frequency)) +
+  geom_bar(stat = 'identity')+
+  theme(axis.text.x=element_text(angle=90))+
+  xlab('Bigram')+
+  ylab('Frequency')
+```
+
+```{r bigram_cloud}
+wordcloud(bigram_freq$word, bigram_freq$frequency, max.words=30, colors=brewer.pal(8, "Set1"))
+```
+
+From the above distribution and word cloud we can see that "right now", "can't wait", "don't know", "last night" and "feel like" are the top 5 most occurred word in the dataset. The information will help us to predict the next word as required in the future modelling process.
+
+```{r triigram, cache = TRUE, eval=TRUE}
+trigram_freq <- rowSums(as.matrix(trigram_tdm[trigram_freqTerm,]))
+trigram_ord <- order(trigram_freq, decreasing = TRUE)
+trigram_freq <- data.frame(word=names(trigram_freq[trigram_ord]), frequency=trigram_freq[trigram_ord])
+
+ggplot(trigram_freq[1:15,], aes(factor(word, levels = unique(word)), frequency)) +
+  geom_bar(stat = 'identity')+
+  theme(axis.text.x=element_text(angle=90))+
+  xlab('Trigram')+
+  ylab('Frequency')
+
+```
+
+
+```{r trigram_cloud}
+wordcloud(trigram_freq$word, trigram_freq$frequency, max.words=15, colors=brewer.pal(8, "Set1"))
+```
+
+Here are the top 15 most occuring trigrams in the dataset. This gives us the information that which combination of words are being used mostly and can be helpful in predicting the next word.
+
+## Proportion Analysis
+
+In this analysis we will try to find out that how many words from sorted frequency dictionary can cover 50% of the dataset. For this we will calculate proportion of each word in the dataset and find out the answer to the above fact.
+
+```{r prop, cache=TRUE, eval=FALSE}
+unigram_freq <- unigram_freq %>% mutate(prop = frequency/sum(frequency))
+unigram_freq <- as.data.frame(unigram_freq)
+head(unigram_freq)
+
+n <- nrow(unigram_freq)
+count <- 1
+sum <- 0
+while(count <= n){
+  if(round(sum(unigram_freq$prop[1:count]),2) == 0.50){
+    break
+  }
+  count <- count + 1
+    
+}
+count
+sum(unigram_freq$prop)
+total.percentage = (count/n)*100
+total.percentage
+
+```
+
+## Summary
+
