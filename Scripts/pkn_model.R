@@ -1,0 +1,79 @@
+PKN <- function(wordA, wordB, n){
+  
+  discount <- 0.75
+   
+  if(n == 1){
+    p <- p_continuation(wordB)
+    if (p == 0){
+      return(discount + 0.01)
+    }
+    else{
+      return(p)
+    }
+  }
+  
+  #Debug
+  #print(length(wordA))
+  
+  
+  wordlist <- unlist(strsplit(toString(wordA), " "))
+  if(n == length(wordlist)){
+    i <- 1
+    while(i <= n-1 ){
+      wordA[i] <- wordlist[i + 1]
+      i <- i + 1
+    }
+    if (length(wordA) == 1){
+      wordA <- paste(wordA[1])
+      #print(wordA)
+    }  
+    else if (length(wordA) == 2){
+      wordA <- paste(wordA[1], wordA[2])
+     # print(wordA)
+    }
+  }
+  
+  # Total count of previous string in corpus
+  total_count_wi_minus_1 <- CKN(n-1, wordA)
+  
+  if(total_count_wi_minus_1 == 0){
+    total_count_wi_minus_1 <- discount
+  }
+  
+  #total count of word type discounted
+  total_word_type_discounted <- word_type_discounted(n , wordA)
+  
+  if(total_word_type_discounted == 0){
+    total_word_type_discounted <- 0.1
+  }
+  
+  complete_word <- paste(wordA, wordB, sep = " ")
+  lambda <- (discount / total_count_wi_minus_1) * total_word_type_discounted
+  
+  #Debug
+  #print(CKN(n-1, wordA))
+  #print( word_type_discounted(n , wordA))
+  
+  if(is.nan(lambda)){
+    lambda <- discount
+  }
+  
+  #low level pkn
+  pkn_low_level <- PKN(wordA , wordB, n - 1)
+  
+  #count of string if put together
+  count_complete_word <- (CKN(n , complete_word))
+  
+  result <- max(count_complete_word/total_count_wi_minus_1,0) + (lambda * pkn_low_level)
+  
+  #print(result)
+  
+  #check if the results are not NaN, other wisundebue return low level PKN value
+  
+  if (is.nan(result)){
+    return(pkn_low_level)
+  }
+  else{
+    return(result)
+  }
+}
