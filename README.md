@@ -23,4 +23,4 @@ I have conducted the exploratory analysis for this project. Here is [the link](h
 
 An Early Build of the application is ready. I can be accessed by clicking on the following link.
 
-[Text Prediction App](https://amanbhagat.shinyapps.io/Text_Prediction_App/)
+[Text Prediction App](https://amanbhagat.shinyapps.io/Text-Prediction-NLP/)
