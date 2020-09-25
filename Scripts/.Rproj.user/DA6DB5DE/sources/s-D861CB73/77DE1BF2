@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601019314875.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "77DE1BF2",
+    "lastKnownWriteTime" : 1601019340,
+    "last_content_update" : 1601019340884,
+    "path" : "F:/R Workspace/Text_Prediction_App/ui.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "48,17",
+        "scrollLine" : "39"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

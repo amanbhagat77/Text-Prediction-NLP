@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1600871039510.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8E889BB5",
+    "lastKnownWriteTime" : 1600415909,
+    "last_content_update" : 1600415909,
+    "path" : "D:/Games/R Workspace/Capstone/temp/temp.RMD",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "167,94",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

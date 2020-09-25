@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1600861053446.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3835242092",
+    "id" : "F0C78ED5",
+    "lastKnownWriteTime" : 1600359584,
+    "last_content_update" : 1600359584,
+    "path" : "~/GitHub/Text-Prediction-NLP/Scripts/cleaning_dataset.R",
+    "project_path" : "cleaning_dataset.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

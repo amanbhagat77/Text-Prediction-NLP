@@ -1,7 +1,7 @@
 ## The candidate list is prepared based on the bigram model
 ## 
 ## Function Name: find_candidate_list()
-## Called by: predict_next_word()
+## Called by: find_next_word()
 ## Arguments:
 ##      input string  : String input by user
 ##      minimum Count : Minimum count of the found word
@@ -15,7 +15,7 @@ find_candidate_list <- function(string, min_count){
   word <- wordslist[n] ## word to be searched in the bigram model to get the list words which are followed by this word
   
   candidate_list <- bigram_freq[grepl(paste("^",word,"$", sep = ""),bigram_freq$token1 ) & bigram_freq$count > min_count,]
-  candidate_list <- candidate_list$token2[order(-candidate_list$count)][1:100]
+  candidate_list <- candidate_list$token2[order(-candidate_list$count)][1:50]
   candidate_list <- candidate_list[!is.na(candidate_list)]                        ## Remove NA from the list
   candidate_list <- candidate_list[candidate_list!= "s" & candidate_list!= "rt" & candidate_list!= "th" & candidate_list != "st"]
   if(length(candidate_list) == 0){

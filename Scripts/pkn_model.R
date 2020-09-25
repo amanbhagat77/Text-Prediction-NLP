@@ -1,3 +1,19 @@
+## 
+## Function Name: word_type_discounted()
+## Called by: find_next_word()
+## Calls : CKN(),word_type_discounted(),p_continuation()
+## Arguments:
+##      input wordA  : Sentence input by user
+##      input wordB  : Candidate Word
+##      input n      : length of the total scntense including predicted word
+##
+## Returns Kneyser Kney probability of that candidate word
+
+
+source("Scripts/calculate_count.R")
+source("Scripts/calculate_p_continuation.R")
+source("Scripts/word_type_discounted.R")
+
 PKN <- function(wordA, wordB, n){
   
   discount <- 0.75

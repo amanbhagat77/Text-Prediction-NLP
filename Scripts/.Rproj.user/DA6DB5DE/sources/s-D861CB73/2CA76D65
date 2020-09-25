@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1600861046026.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2CA76D65",
+    "lastKnownWriteTime" : 1600862636,
+    "last_content_update" : 1600862636916,
+    "path" : "~/GitHub/Text-Prediction-NLP/Scripts/candidate_list.R",
+    "project_path" : "candidate_list.R",
+    "properties" : {
+        "cursorPosition" : "17,76",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

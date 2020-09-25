@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1600861040860.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4179250835",
+    "id" : "C8082613",
+    "lastKnownWriteTime" : 1600343204,
+    "last_content_update" : 1600343204,
+    "path" : "~/GitHub/Text-Prediction-NLP/Scripts/calculate_count.R",
+    "project_path" : "calculate_count.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
