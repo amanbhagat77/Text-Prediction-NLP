@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601027968399.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F47FE78E",
+    "lastKnownWriteTime" : 1601029656,
+    "last_content_update" : 1601029656368,
+    "path" : "~/GitHub/Text-Prediction-NLP/ui.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "40,37",
+        "scrollLine" : "26"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
