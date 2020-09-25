@@ -8,7 +8,7 @@ In this capstone we will be applying data science in the area of natural languag
 [Natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing)      
 [Text mining infrastucture in R](http://www.jstatsoft.org/v25/i05/)        
 [CRAN Task View: Natural Language Processing](http://cran.r-project.org/web/views/NaturalLanguageProcessing.html)    
-[Language Modelling by Dan Jurafsky](http://web.stanford.edu/class/cs124/lec/languagemodeling.pdf)
+[Language Modelling by Dan Jurafsky](http://web.stanford.edu/class/cs124/lec/languagemodeling.pdf)  
 [Kneyser Kney Smoothing](https://en.wikipedia.org/wiki/Kneser%E2%80%93Ney_smoothing)
 
 # Dataset
