@@ -1,25 +1,25 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1601022607480.000,
+    "created" : 1601031328710.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
-    "id" : "FA935B91",
+    "id" : "7BE91753",
     "lastKnownWriteTime" : 1600359584,
     "last_content_update" : 1600359584,
-    "path" : "F:/R Workspace/Text_Prediction_App/Scripts/cleaning_dataset.R",
+    "path" : "~/GitHub/Text-Prediction-NLP/Exploratory Analysis/Exploratory Analysis.Rmd",
     "project_path" : null,
     "properties" : {
-        "cursorPosition" : "2,0",
+        "cursorPosition" : "29,0",
         "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 9,
+    "relative_order" : 10,
     "source_on_save" : false,
     "source_window" : "",
-    "type" : "r_source"
+    "type" : "r_markdown"
 }

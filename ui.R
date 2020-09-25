@@ -6,11 +6,8 @@ shinyUI(fluidPage(
     
     # Application title
     
-    titlePanel( fluidRow(
-        column(4, align="left",
-               h2("Text Prediction App using Natural Language Processing")
-        )
-    )),
+    titlePanel("Text Prediction App using Natural Language Processing")
+        ,
     #span("Note: When the page loads, please give 10-15 seconds for the app to load in the background."),
     # Sidebar with a slider input for number of bins
     sidebarLayout(
