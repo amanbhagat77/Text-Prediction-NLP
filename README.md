@@ -21,6 +21,6 @@ This is the training data to get you started that will be the basis for most of 
 
 I have conducted the exploratory analysis for this project. Here is [the link](https://rpubs.com/amanbhagat77/ExpAnalysis) to the analysis report.     
 
-An Early Build of the application is ready. I can be accessed by clicking on the following link.
+An Early Build of the application is ready. You can be accessed it by clicking on the following link.
 
 [Text Prediction App](https://amanbhagat.shinyapps.io/Text-Prediction-NLP/)
