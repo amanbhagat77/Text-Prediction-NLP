@@ -1,4 +1,4 @@
-# Text-Prediction-NLP
+# Text-Prediction-App-NLP
 
 # Overview
 
@@ -8,7 +8,7 @@ In this capstone we will be applying data science in the area of natural languag
 [Natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing)      
 [Text mining infrastucture in R](http://www.jstatsoft.org/v25/i05/)        
 [CRAN Task View: Natural Language Processing](http://cran.r-project.org/web/views/NaturalLanguageProcessing.html)    
-[Language Modelling by Dan Jurafsky](http://web.stanford.edu/class/cs124/lec/languagemodeling.pdf)
+[Language Modelling by Dan Jurafsky](http://web.stanford.edu/class/cs124/lec/languagemodeling.pdf)  
 [Kneyser Kney Smoothing](https://en.wikipedia.org/wiki/Kneser%E2%80%93Ney_smoothing)
 
 # Dataset
@@ -21,6 +21,6 @@ This is the training data to get you started that will be the basis for most of 
 
 I have conducted the exploratory analysis for this project. Here is [the link](https://rpubs.com/amanbhagat77/ExpAnalysis) to the analysis report.     
 
-An Early Build of the application is ready. I can be accessed by clicking on the following link.
+An Early Build of the application is ready. You can be accessed it by clicking on the following link.
 
-[Text Prediction App](https://amanbhagat.shinyapps.io/Text_Prediction_App/)
+[Text Prediction App](https://amanbhagat.shinyapps.io/Text-Prediction-NLP/)
