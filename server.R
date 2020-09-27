@@ -11,8 +11,8 @@ shinyServer(
     function(input, output) {
         
         output$oWordPredictions <- renderText({
-            #input$submitButton
-            predicted_words_df <- find_next_word(string = input$sentenceInputVar)
+            input$submitButton
+            predicted_words_df <- isolate(find_next_word(string = input$sentenceInputVar))
             results <- isolate(paste(
                 unlist(lapply(predicted_words_df$word[1:5],
                               function(x) paste0("[", x, "]")

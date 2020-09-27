@@ -21,13 +21,27 @@ quadgram_freq <- readRDS("corpus/quadgram_freq.rds")
 
 find_next_word <- function(string){
   
+  string <- tolower(string)
   candidate_list <- find_candidate_list(string, min_count = 2)
   probability <- vector()
   
   i <- 1  
   n <- length(candidate_list) 
-  size <- length(unlist(strsplit(string , " ")))                   #size of the string
+  word_list <- unlist(strsplit(string , " "))
+  size <- length(word_list)                   #size of the string
+  temp_word_list <- c()
   
+  count <- 1
+  if(size > 3){
+    for (i in seq(3,1, by = -1)){
+      temp_word_list[count] <- word_list[size - i]
+      count <- count + 1
+    }
+      
+  }
+  
+  string <-  paste(temp_word_list[1],temp_word_list[2],temp_word_list[3])
+  ##print(string) ##debugging
   
   for (word in candidate_list){
     

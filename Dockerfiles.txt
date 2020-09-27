@@ -1,0 +1,3 @@
+FROM rocker/shiny-verse
+
+COPY /Text-Prediction-NLP/ /srv/shiny-server/

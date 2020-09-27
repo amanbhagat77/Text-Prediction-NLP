@@ -59,7 +59,7 @@ PKN <- function(wordA, wordB, n){
   #total count of word type discounted
   total_word_type_discounted <- word_type_discounted(n , wordA)
   
-  if(total_word_type_discounted == 0){
+  if(total_word_type_discounted == 0 || length(total_word_type_discounted) == 0){
     total_word_type_discounted <- 0.1
   }
   
