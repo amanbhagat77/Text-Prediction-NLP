@@ -5,8 +5,8 @@ account: amanbhagat
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2886988
-bundleId: 3669721
+bundleId: 3675040
 url: https://amanbhagat.shinyapps.io/Text-Prediction-NLP/
-when: 1601031381.01619
+when: 1601181587.76258
 asMultiple: FALSE
 asStatic: FALSE
