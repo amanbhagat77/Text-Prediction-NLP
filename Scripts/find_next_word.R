@@ -11,8 +11,8 @@
 source("Scripts/pkn_model.R")
 source("Scripts/candidate_list.R")
 
-##directory <- "C:/Users/amanb/Documents/GitHub/Text-Prediction-NLP/Scripts"
-##setwd(directory)
+#directory <- "C:/Users/amanb/Documents/GitHub/Text-Prediction-NLP"
+#setwd(directory)
 
 unigram_freq <- readRDS("corpus/unigram_freq.rds")
 bigram_freq <- readRDS("corpus/bigram_freq.rds")
@@ -37,10 +37,10 @@ find_next_word <- function(string){
       temp_word_list[count] <- word_list[size - i]
       count <- count + 1
     }
-      
+    string <-  paste(temp_word_list[1],temp_word_list[2],temp_word_list[3])
   }
   
-  string <-  paste(temp_word_list[1],temp_word_list[2],temp_word_list[3])
+  
   ##print(string) ##debugging
   
   for (word in candidate_list){

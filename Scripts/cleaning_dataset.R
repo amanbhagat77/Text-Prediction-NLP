@@ -9,9 +9,9 @@ lines_twitter <- readLines(con_twitter, warn=FALSE, encoding="UTF-8")
 lines_news <- readLines(con_news, encoding="UTF-8")
 lines_blogs <- readLines(con_blogs, warn=FALSE, encoding="UTF-8")
 
-twitter <- sample(lines_twitter, length(lines_twitter)*0.05)
-blogs <- sample(lines_blogs, length(lines_blogs)*0.05)
-news <- sample(lines_news, length(lines_news)*0.05)
+twitter <- sample(lines_twitter, length(lines_twitter)*0.15)
+blogs <- sample(lines_blogs, length(lines_blogs)*0.15)
+news <- sample(lines_news, length(lines_news)*0.15)
 
 corpus <- c(twitter, blogs, news)
 corpus <- iconv(corpus, "UTF-8","ASCII", sub = "")

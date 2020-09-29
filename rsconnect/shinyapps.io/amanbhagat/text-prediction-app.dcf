@@ -1,0 +1,13 @@
+name: text-prediction-app
+title: text-prediction-app
+username:
+account: amanbhagat
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2908320
+bundleId: 3682446
+url: https://amanbhagat.shinyapps.io/text-prediction-app/
+when: 1601371500.46226
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|Dockerfiles.txt|License.txt|README.md|Exploratory Analysis/Exploratory Analysis.Rmd|Slides

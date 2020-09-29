@@ -6,8 +6,8 @@ shinyUI(fluidPage(
     
     # Application title
     
-    titlePanel("Text Prediction App using Natural Language Processing")
-        ,
+    titlePanel("Text Prediction App using Natural Language Processing"),
+    
     #span("Note: When the page loads, please give 10-15 seconds for the app to load in the background."),
     # Sidebar with a slider input for number of bins
     sidebarLayout(
@@ -43,7 +43,8 @@ shinyUI(fluidPage(
             p(tags$b("Desclaimer:")," This is a an early build of the application. Please feel free to reach for any suggestions."),
             span(tags$b("Contact:"), "amanbhagat77@gmail.com"),
             div(tags$b("Author:"), "Aman Bhagat"),
-            p(tags$b("License Copyright:"),tags$a(href = "https://github.com/amanbhagat77/Text-Prediction-NLP/blob/master/License.txt", "MIT License")),
+            span(tags$b("Version:"), "1.1"),
+            p(tags$b("License Copyright:"),tags$a(href = "https://github.com/amanbhagat77/Text-Prediction-NLP/blob/master/License.txt", "MIT License"))
             
             
         ),

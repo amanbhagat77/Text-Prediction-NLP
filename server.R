@@ -1,9 +1,8 @@
 library(shiny)
 library(data.table)
 library(wordcloud)
-
-##directory <- "C:/Users/amanb/Documents/GitHub/Text-Prediction-NLP/Scripts"
-##setwd(directory)
+#directory <- "C:/Users/amanb/Documents/GitHub/Text-Prediction-NLP"
+#setwd(directory)
 
 source("Scripts/find_next_word.R")
 
