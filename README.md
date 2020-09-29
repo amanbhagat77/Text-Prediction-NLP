@@ -17,6 +17,18 @@ This is the training data to get you started that will be the basis for most of 
 
 [Capstone Dataset](https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip)
 
+# Prediction Model
+
+Kneser-Ney smoothing is an algorithm designed to adjust the weights (through discounting) by using the continuation counts of lower n-grams. The concept is fairly simple though a bit more difficult to implement in a program than the one used in Prediction Model 1.
+
+Given the sentence, “Francisco”" is presented as the suggested ending, because it appears more often than “glasses” in some text.
+
+I can’t see without my reading… __ Francisco __
+
+However, even though “Francisco” appears more often than “glasses”, “Francisco” rarely occurs outside of the context of “San Francisco”. Thus, instead of observing how often a word appears, the Kneser-Ney algorithm takes into account how often a word completes a bigram type (e.g., “prescription glasses”, “reading glasses”, “small glasses” vs. “San Francisco”). This example was taken from Jurafsky’s video lecture on Kneser-Ney Smoothing, which also describes the equation used to calculate the Kneser-Ney probability. https://www.youtube.com/watch?v=wtB00EczoCM
+
+I believe that typically, the smoothing algorithm is performed on all of the n-grams (unigram models, bigram models, etc.) prior to attempting any predictions. However, given the restraint of computing time, I only had enough time to create a version which performs the smoothing when a user provides an input.
+
 ## Current State of the Project
 
 I have conducted the exploratory analysis for this project. Here is [the link](https://rpubs.com/amanbhagat77/ExpAnalysis) to the analysis report.     
