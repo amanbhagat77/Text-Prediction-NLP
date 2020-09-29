@@ -19,7 +19,7 @@ This is the training data to get you started that will be the basis for most of 
 
 # Prediction Model
 
-Kneser-Ney smoothing is an algorithm designed to adjust the weights (through discounting) by using the continuation counts of lower n-grams. The concept is fairly simple though a bit more difficult to implement in a program than the one used in Prediction Model 1.
+Kneser-Ney smoothing is an algorithm designed to adjust the weights (through discounting) by using the continuation counts of lower n-grams. The concept is fairly simple though a bit more difficult to implement in a program.
 
 Given the sentence, “Francisco”" is presented as the suggested ending, because it appears more often than “glasses” in some text.
 
